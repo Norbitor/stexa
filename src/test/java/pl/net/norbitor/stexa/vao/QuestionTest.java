@@ -17,7 +17,7 @@ public class QuestionTest {
     public void testReturnAllAnswers() {
         List<Answer> answers = List.of(new Answer("A"), new Answer("B"), new Answer("C"));
 
-        Question q = new Question("question", answers.subList(0, 1), answers.subList(2, 2));
+        Question q = new Question("question", answers.subList(0, 2), answers.subList(2, 3));
         Assertions.assertEquals(answers, q.getAnswerList());
     }
 

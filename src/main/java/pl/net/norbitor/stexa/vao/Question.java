@@ -1,6 +1,8 @@
 package pl.net.norbitor.stexa.vao;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Question {
     private final String content;
@@ -10,6 +12,9 @@ public class Question {
     public Question(String content, List<Answer> incorrectAnswerList, List<Answer> correctAnswerList) {
         this.content = content;
         this.incorrectAnswerList = incorrectAnswerList;
+        if (correctAnswerList.isEmpty()) {
+            throw new IllegalArgumentException("Question has to have at least one correct answer");
+        }
         this.correctAnswerList = correctAnswerList;
     }
 
@@ -18,7 +23,8 @@ public class Question {
     }
 
     public List<Answer> getAnswerList() {
-        return null;
+        return Stream.concat(incorrectAnswerList.stream(), correctAnswerList.stream())
+                .collect(Collectors.toList());
     }
 
     public List<Answer> getCorrectAnswerList() {
@@ -26,6 +32,6 @@ public class Question {
     }
 
     public boolean isMultiSelect() {
-        return false;
+        return correctAnswerList.size() > 1;
     }
 }
