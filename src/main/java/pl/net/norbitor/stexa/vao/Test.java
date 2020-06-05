@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Test {
     private final String title;
-    private final List<Category> categories;
+    private final List<Question> questions;
     private final int availableTime;
 
-    public Test(String title, List<Category> categories, int availableTime) {
+    public Test(String title, List<Question> questions, int availableTime) {
         this.title = title;
-        this.categories = categories;
+        this.questions = questions;
         this.availableTime = availableTime;
     }
 
@@ -17,8 +17,8 @@ public class Test {
         return title;
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public List<Question> getQuestions() {
+        return questions;
     }
 
     public int getAvailableTime() {
