@@ -4,7 +4,6 @@ package pl.net.norbitor.stexa.vao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Set;
 
 public class QuestionTest {
@@ -31,6 +30,6 @@ public class QuestionTest {
                 Set.of(new Answer("A")),
                 Set.of(new Answer("B"), new Answer("C")));
 
-        Assertions.assertTrue(q.isMultiSelect());
+        Assertions.assertTrue(q.isMultichoice());
     }
 }

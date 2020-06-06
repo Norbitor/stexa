@@ -5,11 +5,23 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Representation of question.
+ *
+ * Stores information about question content and its answers set (both correct and incorrect)
+ */
 public class Question {
     private final String content;
     private final Set<Answer> incorrectAnswerSet;
     private final Set<Answer> correctAnswerSet;
 
+    /**
+     * Constructs the Question representation object.
+     *
+     * @param content Content of a question.
+     * @param incorrectAnswerSet Set of incorrect answers for the question. May be empty.
+     * @param correctAnswerSet Set of correct answers for a question. Needs to have at least one element.
+     */
     public Question(String content, Set<Answer> incorrectAnswerSet, Set<Answer> correctAnswerSet) {
         this.content = content;
         this.incorrectAnswerSet = incorrectAnswerSet;
@@ -32,7 +44,7 @@ public class Question {
         return correctAnswerSet;
     }
 
-    public boolean isMultiSelect() {
+    public boolean isMultichoice() {
         return correctAnswerSet.size() > 1;
     }
 }
