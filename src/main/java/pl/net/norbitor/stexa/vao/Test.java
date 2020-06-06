@@ -1,6 +1,6 @@
 package pl.net.norbitor.stexa.vao;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Class representing test for end user.
@@ -10,10 +10,10 @@ import java.util.List;
  */
 public class Test {
     private final String title;
-    private final List<Question> questions;
+    private final Set<Question> questions;
     private final int availableTimeInMinutes;
 
-    public Test(String title, List<Question> questions, int availableTimeInMinutes) {
+    public Test(String title, Set<Question> questions, int availableTimeInMinutes) {
         this.title = title;
         this.questions = questions;
         this.availableTimeInMinutes = availableTimeInMinutes;
@@ -23,7 +23,7 @@ public class Test {
         return title;
     }
 
-    public List<Question> getQuestions() {
+    public Set<Question> getQuestions() {
         return questions;
     }
 

@@ -3,7 +3,6 @@ package pl.net.norbitor.stexa.vao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Set;
 
 public class CategoryTest {
@@ -14,6 +13,6 @@ public class CategoryTest {
     }
 
     private Set<Question> prepareOneQuestion() {
-        return Set.of(new Question("question", List.of(), List.of(new Answer("answer"))));
+        return Set.of(new Question("question", Set.of(), Set.of(new Answer("answer"))));
     }
 }

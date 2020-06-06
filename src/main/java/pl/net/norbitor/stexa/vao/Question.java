@@ -1,37 +1,38 @@
 package pl.net.norbitor.stexa.vao;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Question {
     private final String content;
-    private final List<Answer> incorrectAnswerList;
-    private final List<Answer> correctAnswerList;
+    private final Set<Answer> incorrectAnswerSet;
+    private final Set<Answer> correctAnswerSet;
 
-    public Question(String content, List<Answer> incorrectAnswerList, List<Answer> correctAnswerList) {
+    public Question(String content, Set<Answer> incorrectAnswerSet, Set<Answer> correctAnswerSet) {
         this.content = content;
-        this.incorrectAnswerList = incorrectAnswerList;
-        if (correctAnswerList.isEmpty()) {
+        this.incorrectAnswerSet = incorrectAnswerSet;
+        if (correctAnswerSet.isEmpty()) {
             throw new IllegalArgumentException("Question has to have at least one correct answer");
         }
-        this.correctAnswerList = correctAnswerList;
+        this.correctAnswerSet = correctAnswerSet;
     }
 
     public String getContent() {
         return content;
     }
 
-    public List<Answer> getAnswerList() {
-        return Stream.concat(incorrectAnswerList.stream(), correctAnswerList.stream())
-                .collect(Collectors.toList());
+    public Set<Answer> getAnswerSet() {
+        return Stream.concat(incorrectAnswerSet.stream(), correctAnswerSet.stream())
+                .collect(Collectors.toSet());
     }
 
-    public List<Answer> getCorrectAnswerList() {
-        return correctAnswerList;
+    public Set<Answer> getCorrectAnswerSet() {
+        return correctAnswerSet;
     }
 
     public boolean isMultiSelect() {
-        return correctAnswerList.size() > 1;
+        return correctAnswerSet.size() > 1;
     }
 }
