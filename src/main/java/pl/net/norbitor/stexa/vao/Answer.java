@@ -2,9 +2,17 @@ package pl.net.norbitor.stexa.vao;
 
 import java.util.Objects;
 
+/**
+ * Representation of single answer for a question.
+ */
 public class Answer {
     private final String content;
 
+    /**
+     * Constructs Answer object
+     *
+     * @param content Non-Null and Non-Empty string of answer content
+     */
     public Answer(String content) {
         if (content == null || content.isEmpty()) {
             throw new IllegalArgumentException("Answer content must contain non-empty value");
@@ -21,7 +29,7 @@ public class Answer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Answer answer = (Answer) o;
-        return Objects.equals(content, answer.content);
+        return answer.getContent().equals(content);
     }
 
     @Override
