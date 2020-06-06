@@ -1,6 +1,5 @@
 package pl.net.norbitor.stexa.vao;
 
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

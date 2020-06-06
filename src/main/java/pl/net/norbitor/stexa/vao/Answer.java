@@ -6,7 +6,7 @@ import java.util.Objects;
  * Representation of single answer for a question.
  */
 public class Answer {
-    private final String content;
+    private final TextContent content;
 
     /**
      * Constructs Answer object
@@ -14,14 +14,11 @@ public class Answer {
      * @param content Non-Null and Non-Empty string of answer content
      */
     public Answer(String content) {
-        if (content == null || content.isEmpty()) {
-            throw new IllegalArgumentException("Answer content must contain non-empty value");
-        }
-        this.content = content;
+        this.content = new TextContent(content);
     }
 
     public String getContent() {
-        return content;
+        return content.getContent();
     }
 
     @Override
@@ -29,7 +26,7 @@ public class Answer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Answer answer = (Answer) o;
-        return answer.getContent().equals(content);
+        return answer.getContent().equals(content.getContent());
     }
 
     @Override

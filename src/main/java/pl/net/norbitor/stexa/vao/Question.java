@@ -1,6 +1,5 @@
 package pl.net.norbitor.stexa.vao;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,7 +10,7 @@ import java.util.stream.Stream;
  * Stores information about question content and its answers set (both correct and incorrect)
  */
 public class Question {
-    private final String content;
+    private final TextContent content;
     private final Set<Answer> incorrectAnswerSet;
     private final Set<Answer> correctAnswerSet;
 
@@ -23,7 +22,7 @@ public class Question {
      * @param correctAnswerSet Set of correct answers for a question. Needs to have at least one element.
      */
     public Question(String content, Set<Answer> incorrectAnswerSet, Set<Answer> correctAnswerSet) {
-        this.content = content;
+        this.content = new TextContent(content);
         this.incorrectAnswerSet = incorrectAnswerSet;
         if (correctAnswerSet.isEmpty()) {
             throw new IllegalArgumentException("Question has to have at least one correct answer");
@@ -32,7 +31,7 @@ public class Question {
     }
 
     public String getContent() {
-        return content;
+        return content.getContent();
     }
 
     public Set<Answer> getAnswerSet() {

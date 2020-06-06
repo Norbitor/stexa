@@ -9,18 +9,18 @@ import java.util.Set;
  * list of questions and some metadata such as title and available time.
  */
 public class Test {
-    private final String title;
+    private final TextContent title;
     private final Set<Question> questions;
     private final int availableTimeInMinutes;
 
     public Test(String title, Set<Question> questions, int availableTimeInMinutes) {
-        this.title = title;
+        this.title = new TextContent(title);
         this.questions = questions;
         this.availableTimeInMinutes = availableTimeInMinutes;
     }
 
     public String getTitle() {
-        return title;
+        return title.getContent();
     }
 
     public Set<Question> getQuestions() {

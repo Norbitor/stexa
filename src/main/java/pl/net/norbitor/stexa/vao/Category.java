@@ -13,7 +13,7 @@ import java.util.Set;
  * @see Question
  */
 public class Category {
-    private final String title;
+    private final TextContent title;
     private final Set<Question> questions;
     private final int questionsToShuffle;
 
@@ -26,7 +26,7 @@ public class Category {
      * @throws IllegalArgumentException when there are less questions than amount to shuffle
      */
     public Category(String title, Set<Question> questions, int questionsToShuffle) {
-        this.title = title;
+        this.title = new TextContent(title);
         this.questions = questions;
         if (questionsToShuffle > questions.size()) {
             throw new IllegalArgumentException("questionsToShuffle needs to be less than or equal of questions amount");
@@ -35,7 +35,7 @@ public class Category {
     }
 
     public String getTitle() {
-        return title;
+        return title.getContent();
     }
 
     public Set<Question> getQuestions() {
