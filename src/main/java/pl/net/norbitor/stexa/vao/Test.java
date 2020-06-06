@@ -2,15 +2,21 @@ package pl.net.norbitor.stexa.vao;
 
 import java.util.List;
 
+/**
+ * Class representing test for end user.
+ *
+ * This class represents test prepared to show to the user. It contains full
+ * list of questions and some metadata such as title and available time.
+ */
 public class Test {
     private final String title;
     private final List<Question> questions;
-    private final int availableTime;
+    private final int availableTimeInMinutes;
 
-    public Test(String title, List<Question> questions, int availableTime) {
+    public Test(String title, List<Question> questions, int availableTimeInMinutes) {
         this.title = title;
         this.questions = questions;
-        this.availableTime = availableTime;
+        this.availableTimeInMinutes = availableTimeInMinutes;
     }
 
     public String getTitle() {
@@ -21,7 +27,7 @@ public class Test {
         return questions;
     }
 
-    public int getAvailableTime() {
-        return availableTime;
+    public int getAvailableTimeInMinutes() {
+        return availableTimeInMinutes;
     }
 }
