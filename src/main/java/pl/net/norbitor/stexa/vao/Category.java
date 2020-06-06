@@ -10,6 +10,9 @@ public class Category {
     public Category(String title, List<Question> questions, int questionsToShuffle) {
         this.title = title;
         this.questions = questions;
+        if (questionsToShuffle > questions.size()) {
+            throw new IllegalArgumentException("questionsToShuffle needs to be less than or equal of questions amount");
+        }
         this.questionsToShuffle = questionsToShuffle;
     }
 
