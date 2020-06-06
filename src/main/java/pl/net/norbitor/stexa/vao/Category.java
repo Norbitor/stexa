@@ -1,13 +1,31 @@
 package pl.net.norbitor.stexa.vao;
 
-import java.util.List;
+import java.util.Set;
 
+/**
+ * Representation of category - set of questions about related topic.
+ *
+ * Stores also some metadata about category:
+ *  - title
+ *  - how much questions should be get from this category (may be used by
+ *    some test preparation strategy)
+ *
+ * @see Question
+ */
 public class Category {
     private final String title;
-    private final List<Question> questions;
+    private final Set<Question> questions;
     private final int questionsToShuffle;
 
-    public Category(String title, List<Question> questions, int questionsToShuffle) {
+    /**
+     * Constructs Category representation value object.
+     *
+     * @param title Title of the category
+     * @param questions Set of Questions from this category
+     * @param questionsToShuffle How much questions should be get from this category
+     * @throws IllegalArgumentException when there are less questions than amount to shuffle
+     */
+    public Category(String title, Set<Question> questions, int questionsToShuffle) {
         this.title = title;
         this.questions = questions;
         if (questionsToShuffle > questions.size()) {
@@ -20,7 +38,7 @@ public class Category {
         return title;
     }
 
-    public List<Question> getQuestions() {
+    public Set<Question> getQuestions() {
         return questions;
     }
 

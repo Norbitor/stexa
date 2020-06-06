@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Set;
 
 public class CategoryTest {
     @Test
@@ -12,7 +13,7 @@ public class CategoryTest {
                 () -> new Category("category", prepareOneQuestion(), 2));
     }
 
-    private List<Question> prepareOneQuestion() {
-        return List.of(new Question("question", List.of(), List.of(new Answer("answer"))));
+    private Set<Question> prepareOneQuestion() {
+        return Set.of(new Question("question", List.of(), List.of(new Answer("answer"))));
     }
 }
