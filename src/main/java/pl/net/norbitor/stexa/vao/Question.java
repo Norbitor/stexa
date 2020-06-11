@@ -39,11 +39,26 @@ public class Question {
                 .collect(Collectors.toSet());
     }
 
-    public Set<Answer> getCorrectAnswerSet() {
-        return correctAnswerSet;
+    public int getCorrectAnswerAmount() {
+        return correctAnswerSet.size();
     }
 
-    public boolean isMultichoice() {
+    /**
+     * Informs if the question is multi choice.
+     *
+     * @return true if question has more than one correct answer, false otherwise
+     */
+    public boolean isMultiChoice() {
         return correctAnswerSet.size() > 1;
+    }
+
+    /**
+     * Checks if the given answer is correct.
+     *
+     * @param answer an Answer to check
+     * @return true when answer can be found in correct answers set
+     */
+    public boolean isCorrectAnswer(Answer answer) {
+        return correctAnswerSet.contains(answer);
     }
 }
