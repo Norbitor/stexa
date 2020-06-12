@@ -1,2 +1,15 @@
 # Project exclude paths
 /out/
+.gradle
+build/
+
+# Gradle stuff
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+**/build/
+
+*.iml
+*.ipr
+

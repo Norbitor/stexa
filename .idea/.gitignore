@@ -22,3 +22,11 @@
 # Gradle
 /gradle.xml
 /libraries
+
+# Gradle and Maven with auto-import
+/artifacts
+/compiler.xml
+/jarRepositories.xml
+/modules.xml
+/*.iml
+/modules
