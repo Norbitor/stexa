@@ -13,3 +13,6 @@ gradle-app.setting
 *.iml
 *.ipr
 *.iws
+
+# Apache derby log
+derby.log
